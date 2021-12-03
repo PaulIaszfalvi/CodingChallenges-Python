@@ -1,4 +1,5 @@
 from itertools import permutations
+from PIL import Image
 
 #Check to see if the string provided contains all unique elements
 def isUnique(s):
@@ -40,14 +41,31 @@ def URLify(s, l):
 def oneAway(s1, s2):
     pass
 
+#NxN matrix rotate 
+def rotateMatrix(deg):
+    img = Image.open('Square-Hanging-On-Derwentwater.jpg')
+    width, height = img.size
+    #print(width, height)
+    #img.rotate(deg).show()     #Python built in image rotate
 
+    for w in range(width):
+        for h in range(height):
+            coordinates1 = w, height-h-1
+            coordinates2 = w, h
+            a = img.getpixel(coordinates1)
+            b = img.getpixel(coordinates2)
 
+            img.putpixel((coordinates2), a)
+            img.putpixel((coordinates1), b)
 
+    img.show()       
 
 #print(isUnique("Hello"))
-print(isPermutation("ABC"))
-print(myIsPermutation("ABC"))
+#print(isPermutation("ABC"))
+#print(myIsPermutation("ABC"))
 #print(isPermutation("racecar"))
 
 #myString = "Hello World How Are You?      "
 #print(URLify(myString, 24))
+
+rotateMatrix(-90)

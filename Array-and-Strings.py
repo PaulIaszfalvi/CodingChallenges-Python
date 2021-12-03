@@ -11,9 +11,9 @@ def isPermutation(s):
     a = permutations(s[::], len(s))
     for item in a:
         print(item)
-
+#Permutation 
 def myIsPermutation(s):
-    if len(s) == 1:
+    if len(s) == 1:     #Base Case
         return [s]
     
     perms = myIsPermutation(s[1:])
@@ -22,7 +22,7 @@ def myIsPermutation(s):
 
     for perm in perms:
         for i in range(len(perm)+1):
-            result.append(perm[:i] + char + perm[i:])
+            result.append(perm[:i] + char + perm[i:])   #iterate through items and place char in every spot between them
     
     return result
 

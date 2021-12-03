@@ -36,6 +36,14 @@ def URLify(s, l):
     newString = s[:l:]      #Cut off white spaces after length given
     return newString.replace(" ", "%20")    #Replace spaces with %20
 
+#One Away
+def oneAway(s1, s2):
+    pass
+
+
+
+
+
 #print(isUnique("Hello"))
 print(isPermutation("ABC"))
 print(myIsPermutation("ABC"))

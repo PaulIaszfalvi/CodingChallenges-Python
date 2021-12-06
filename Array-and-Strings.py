@@ -41,24 +41,55 @@ def URLify(s, l):
 def oneAway(s1, s2):
     pass
 
+
 #NxN matrix rotate 
-def rotateMatrix(deg):
-    img = Image.open('Square-Hanging-On-Derwentwater.jpg')
-    width, height = img.size
+def rotateMatrix(img):
+   
+
+    right, top = img.size 
+    left, bottom = 0, 0
     #print(width, height)
+    top -= 1
+
+    while left < right:
+        
+        right -= 1
+        left += 1
+
+        for i in range(right - left):
+
+            coordinates_top = left + i, top          
+            temp = img.getpixel(coordinates_top)
+           
+
+            coordinates2 = right, top - i
+            coordinates3 = right - i, bottom
+            coordinates4 = left, bottom + i 
+
+            if i%500 == 0:
+                print(coordinates_top, coordinates2)
+
+            img.putpixel((coordinates_top), img.getpixel(coordinates2))
+            img.putpixel((coordinates2), img.getpixel(coordinates3))
+            img.putpixel((coordinates3), img.getpixel(coordinates4))
+            img.putpixel((coordinates4), img.getpixel(coordinates_top))
+        
     #img.rotate(deg).show()     #Python built in image rotate
+    return img
 
-    for w in range(width):
-        for h in range(height):
-            coordinates1 = w, height-h-1
-            coordinates2 = w, h
-            a = img.getpixel(coordinates1)
-            b = img.getpixel(coordinates2)
+    # for w in range(width):
+        # for h in range(height):
+        #     coordinates1 = width-h-1, w
+        #     coordinates2 = w, h
+        #    # print(coordinates1, coordinates2)
+        #     color1 = img.getpixel(coordinates1)
+        #     color2 = img.getpixel(coordinates2)
 
-            img.putpixel((coordinates2), a)
-            img.putpixel((coordinates1), b)
+        #     img.putpixel((coordinates2), color1)
+        #     img.putpixel((coordinates1), color2)
 
-    img.show()       
+    # return img      
+
 
 #print(isUnique("Hello"))
 #print(isPermutation("ABC"))
@@ -68,4 +99,7 @@ def rotateMatrix(deg):
 #myString = "Hello World How Are You?      "
 #print(URLify(myString, 24))
 
-rotateMatrix(-90)
+img = Image.open('Goku.jpg')
+image = rotateMatrix(img)
+image.show()
+

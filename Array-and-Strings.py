@@ -50,14 +50,11 @@ def rotateMatrix(img):
     left, bottom = 0, 0
     #print(width, height)
     top -= 1
+    right -= 1
 
-    while left < right:
-        
-        right -= 1
-        left += 1
-
+    while left < right:          
         for i in range(right - left):
-
+            top, bottom = right, left
             coordinates_top = left + i, top          
             temp = img.getpixel(coordinates_top)
            
@@ -66,13 +63,15 @@ def rotateMatrix(img):
             coordinates3 = right - i, bottom
             coordinates4 = left, bottom + i 
 
-            if i%500 == 0:
-                print(coordinates_top, coordinates2)
+            #if i%500 == 0:
+                #print(coordinates_top, coordinates2)
 
             img.putpixel((coordinates_top), img.getpixel(coordinates2))
             img.putpixel((coordinates2), img.getpixel(coordinates3))
             img.putpixel((coordinates3), img.getpixel(coordinates4))
-            img.putpixel((coordinates4), img.getpixel(coordinates_top))
+            img.putpixel((coordinates4), temp)
+        right -= 1
+        left += 1
         
     #img.rotate(deg).show()     #Python built in image rotate
     return img
@@ -100,6 +99,6 @@ def rotateMatrix(img):
 #print(URLify(myString, 24))
 
 img = Image.open('Goku.jpg')
-image = rotateMatrix(img)
+image = rotateMatrix(rotateMatrix(img))
 image.show()
 

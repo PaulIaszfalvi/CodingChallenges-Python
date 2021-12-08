@@ -99,6 +99,7 @@ def rotateMatrix(img):
 #print(URLify(myString, 24))
 
 img = Image.open('Goku.jpg')
-image = rotateMatrix(rotateMatrix(img))
+image = rotateMatrix(img)
 image.show()
+#img.show()
 

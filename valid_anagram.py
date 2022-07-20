@@ -9,9 +9,14 @@ class Solution(object):
         s = self.split(s)
         t = self.split(t)
         
+        print(s)
+        print(t)
+
         for element in s:
             map[element] = map.get(element, 0) + 1 
-            
+
+        print(map)
+
         for element in t:
             map[element] = map.get(element, 0) - 1 
          
@@ -38,8 +43,9 @@ class Solution(object):
 #             return False
         
 #         chars = list(s)        
-#         permutations = list(itertools.permutations(chars))
+#         permutations = list(itertools.permutations(chars))      
 #         permutations = [''.join(permutation) for permutation in permutations]
+#         print(permutations)
                
 #         return t in permutations
         
@@ -47,4 +53,4 @@ class Solution(object):
 
     
 sol = Solution()
-print(sol.isAnagram("ABCDEFGE", "ABCDFGEE"))
+print(sol.isAnagram("abcd", "dbca"))

@@ -9,7 +9,7 @@
         
 #         map = {}
         
-#         if head != None:
+#         if head != None: 
         
 #             while head.next != None:
 

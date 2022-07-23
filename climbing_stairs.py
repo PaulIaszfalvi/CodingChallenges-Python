@@ -15,21 +15,17 @@ class Solution:
             
         return fib
 
-
-
-    from functools import lru_cache
-    @lru_cache(None)
     def climbStairs2(self, n):
         if n == 1:
             return 1
         elif n == 2:
             return 2
         else:
-            return self.climbStairs(n-1) + self.climbStairs(n-2)
+            return self.climbStairs2(n-1) + self.climbStairs2(n-2)
     
     
 sol = Solution();
-print(sol.climbStairs(4))
-print(sol.climbStairs2(4))
+print(sol.climbStairs(24))
+print(sol.climbStairs2(24))
             
 

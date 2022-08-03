@@ -45,15 +45,14 @@ class Solution:
         return results
 
 
-        #First Solution
-    #        
+    #     #First Solution
     #     nums.sort()   
 
     #     total = 0
     #     results_list = []
         
     #     n, p, z = [], [], []
-        
+    #     #Break down the list and reduce repeating zeroes
     #     for e in nums:
     #         if e < 0:
     #             n.append(e)
@@ -69,20 +68,21 @@ class Solution:
     #         nums = p + [0] + n
     #     else: 
     #         nums = p + n
-        
+    #      #Go through the first number of options
     #     for i, e in enumerate(nums[:len(nums)-2]):           
-
+    #         #Find two numbers in the remaining list that add up to the complement of the first number
     #         twoSumResults = self.twoSum(nums[i+1:], e*-1)
 
     #         if twoSumResults:
     #             for items in twoSumResults:
     #                 results_list.append([e, items[0], items[1]])
-
+    #     #Since we only care about a set of answers, remove duplicates
     #     mySet = set(tuple(x) for x in results_list)
     #     unique_Answers = [ list(x) for x in mySet ]
 
     #     return unique_Answers
 
+    # # #Original twoSum solution used to find the other two numbers that add up to target, which is the complement of our first number
     # def twoSum(self, nums: List[int], target:int) -> List[int]:
         
     #     numsMap = {}
@@ -102,9 +102,7 @@ class Solution:
                 
     #         numsMap[n] = i
     #     return indexOfAnswers
-        
-
-
+  
 sol = Solution()
 
 nums = [-1,0,1,2,-1,-4]

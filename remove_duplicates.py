@@ -22,6 +22,8 @@ class Solution:
             if nums[i] != nums[i - 1]:
                 nums[unique] = nums[i]                
                 unique += 1
+            else:
+                nums[i] = None
 
        
         return unique, nums

@@ -1,22 +1,22 @@
 from typing import List
 
-class TwoSum:
-      def twoSum(self, nums: List[int], target: int) -> List[int]:
+# class TwoSum:
+#       def twoSum(self, nums: List[int], target: int) -> List[int]:
 
-        numsMap = {}
-        indexOfAnswers = []
+#         numsMap = {}
+#         indexOfAnswers = []
 
-        for i, n in enumerate(nums):
+#         for i, n in enumerate(nums):
 
-            complement = target - n
+#             complement = target - n
             
-            if complement in numsMap:
-                indexOfAnswers.append(i)                      
-                indexOfAnswers.append(numsMap[complement])          
+#             if complement in numsMap:
+#                 indexOfAnswers.append(i)                      
+#                 indexOfAnswers.append(numsMap[complement])          
                 
-            numsMap[n] = i
+#             numsMap[n] = i
         
-        return indexOfAnswers
+#         return indexOfAnswers
 
     # def __init__(self) -> None:
     #     self.nums = nums
@@ -37,6 +37,23 @@ class TwoSum:
     #             right -= 1
     #         else:
     #             left += 1
+
+class TwoSum:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        complementMap = dict()
+
+        for i in range(len(nums)):
+            complement = target - nums[i]
+
+            if nums[i] in complementMap:
+                print(complementMap)
+                return [complementMap[nums[i]], i]
+            else:
+                complementMap[complement] = i
+
+       
+
 
 nums = [2,7,11,15]
 target = 9

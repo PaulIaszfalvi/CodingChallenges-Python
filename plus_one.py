@@ -7,7 +7,6 @@ class Solution:
             digit += str(s)
 
         digit = int(digit) + 1
-
         digits = [int(i) for i in str(digit)]
 
         return digits

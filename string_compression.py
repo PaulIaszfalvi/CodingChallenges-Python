@@ -1,25 +1,25 @@
-class Solution(object):
-    def compress(self, chars):
- 
-        char = chars[0]
-        result = ''
-        count = 0
+def compress(chars):
+    if not chars:
+        return []
+    
+    char = chars[0]
+    result = []
+    count = 0
 
-        for c in chars:
-            if char == c:
-                count += 1
-            else:
-                result += char + str(count)              
-                count = 1
-                char = c
-        
-        result += char + str(count)   
+    for i, c in enumerate(chars):
+        if i > 0 and chars[i-1] != c:
+            result.append(char)
+            result.append(str(count))
+            count = 1
+            char = c
+        else:
+            count += 1
+    result.append(char)
+    result.append(str(count))
 
-        return list(str(result))
-
+    return ''.join(result)
 
 chars = ["a","a","b","b","c","c","c"]
-print(Solution().compress(chars))
-
+print(compress(chars))
 chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
-print(Solution().compress(chars))
+print(compress(chars))

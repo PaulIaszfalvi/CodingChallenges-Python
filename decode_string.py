@@ -35,7 +35,7 @@ class Solution:
 
         while len(stack) - 1 >= 0:
 
-            if 
+            pass
         
                 
 

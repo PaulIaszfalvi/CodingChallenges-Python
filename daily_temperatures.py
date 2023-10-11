@@ -19,6 +19,8 @@ temperatures = [73,74,75,71,69,72,76,73]
 print(Solution().dailyTemperatures(temperatures))
 
 
+
+
 # Faster online solution 
 
 # result = [0] * len(temperatures) # having list with 0`s elements of same lenght as temperature array.

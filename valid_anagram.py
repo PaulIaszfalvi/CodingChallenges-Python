@@ -1,37 +1,37 @@
 class Solution(object):
     def isAnagram(self, s, t):
+        # Solution 1
         
-        if len(s) != len(t):
-            return False
+    #     if len(s) != len(t):
+    #         return False
         
-        map = {}
+    #     map = {}
         
-        s = self.split(s)
-        t = self.split(t)
+    #     s = self.split(s)
+    #     t = self.split(t)
         
-        print(s)
-        print(t)
+    #     print(s)
+    #     print(t)
 
-        for element in s:
-            map[element] = map.get(element, 0) + 1 
+    #     for element in s:
+    #         map[element] = map.get(element, 0) + 1 
 
-        print(map)
+    #     print(map)
 
-        for element in t:
-            map[element] = map.get(element, 0) - 1 
+    #     for element in t:
+    #         map[element] = map.get(element, 0) - 1 
          
-        for key, value in map.items():
-            if value is not 0:
-                return False        
+    #     for key, value in map.items():
+    #         if value is not 0:
+    #             return False        
             
-        return True
+    #     return True
         
     
-    def split(self, string):
+    # def split(self, string):
         
-        return [char for char in string]
-    
-
+    #     return [char for char in string]
+        
 
 # import itertools
 
@@ -49,8 +49,10 @@ class Solution(object):
                
 #         return t in permutations
         
-    
+        return sorted(list(s)) == sorted(list(t))
 
     
 sol = Solution()
 print(sol.isAnagram("abcd", "dbca"))
+
+print(sol.isAnagram("anagram", "nagaram"))

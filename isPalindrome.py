@@ -1,6 +1,4 @@
 
-
-#Checks for palindrome
 def isPalindrome(s):
-    stringReverse = s[::-1]     #Flips the string
-    return s == stringReverse       #Compares the original to the reversed
+    s = [i for i in s.lower() if i.isalnum()]
+    return s == s[::-1]

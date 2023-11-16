@@ -44,3 +44,13 @@ class Solution:
 
 arr = [2,2,1,2,1]
 print(Solution().maximumElementAfterDecrementingAndRearranging(arr))
+
+
+# Fastest online solution
+
+# arr.sort()
+#         ind, maxx = 0, 0
+#         while ind < len(arr):
+#             if arr[ind] > maxx: maxx += 1; ind += 1
+#             else: ind = bisect_right(arr, maxx, lo=ind)
+#         return maxx

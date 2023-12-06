@@ -1,5 +1,6 @@
 class Solution:
-    def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
+    def minTimeToVisitAllPoints(self, points) -> int:
+        # points.sort()
 
         # Solution 3 based on Solution 2
 
@@ -35,3 +36,7 @@ class Solution:
         #     start = vals
 
         # return ans
+
+points = [[1,1],[3,4],[-1,0]]
+print(Solution().minTimeToVisitAllPoints(points))
+

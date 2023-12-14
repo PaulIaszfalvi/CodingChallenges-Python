@@ -1,0 +1,13 @@
+class Solution:
+    def numSpecial(self, mat: List[List[int]]) -> int:
+        
+        def get_column_sum(col_idx):
+            return sum(row[col_idx] for row in mat)
+
+        ans = 0
+        for row in mat:
+            if sum(row) == 1:
+                col_idx = row.index(1)
+                ans += get_column_sum(col_idx) == 1
+
+        return ans

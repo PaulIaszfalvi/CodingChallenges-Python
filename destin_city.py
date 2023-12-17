@@ -1,6 +1,11 @@
 class Solution:
     def destCity(self, p: List[List[str]]) -> str:
-
+source = set()
+        dest = set()
+        for l in p:
+            source.add(l[0])
+            dest.add(l[1])
+        return list(dest - source)[0]
         # Sets (easiest)
 
         start = set()

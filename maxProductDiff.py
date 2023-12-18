@@ -25,3 +25,18 @@ class Solution:
         # nums.sort()
 
         # return (nums[-1] * nums[-2] - nums[0] * nums[1])
+    
+        # Fastest online Solution
+        # from typing import List
+        # import heapq
+        # from math import prod
+
+        # class Solution:
+        #     def maxProductDifference(self, nums: List[int]) -> int:
+        #         if len(nums) < 4:
+        #             return "List is too short"
+
+        #         largest_two = heapq.nlargest(2, nums)
+        #         smallest_two = heapq.nsmallest(2, nums)
+
+        #         return prod(largest_two) - prod(smallest_two)

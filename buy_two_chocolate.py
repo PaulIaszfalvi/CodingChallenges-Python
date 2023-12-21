@@ -21,3 +21,9 @@ class Solution:
         # prices.sort()
         # result = money - sum(prices[:2])
         # return result if result >= 0 else money
+    
+        # Faster online O(n)
+
+        # heapify(prices)
+        # sm = heappop(prices)+heappop(prices)
+        # return money - sm if sm <= money else money

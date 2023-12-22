@@ -2,6 +2,7 @@ class Solution:
     def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
 
         # Slightly faster version is to use this sort
+        # Since we only sort for x values, we don't care to sort the entire lists of lists, but the list by x's
 
         # points.sort(key=lambda x: x[0])
 

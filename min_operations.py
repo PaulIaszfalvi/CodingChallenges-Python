@@ -77,3 +77,8 @@ class Solution:
         # n = len(s)
         # count = sum((i & 1) ^ int(c) for i, c in enumerate(s))
         # return min(count, n - count)
+    
+        # More complex but cool 
+    
+        # count = reduce(lambda acc, iv: acc + (iv[0] % 2 ^ (iv[1] == '0')), enumerate(s), 0)
+        # return min(count, len(s) - count)

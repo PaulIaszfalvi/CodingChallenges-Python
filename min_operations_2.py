@@ -1,7 +1,7 @@
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
 
-        # Solution 3
+        # Solution 4
 
         d = {}
         o = 0
@@ -17,6 +17,26 @@ class Solution:
                 o += 1
 
         return o
+    
+        # Solution 3
+    
+        # d = {}
+        # o = 0
+
+        # for x in nums:
+        #     d[x] = d.get(x, 0) + 1
+
+        # for x in d:
+        #     if d[x] == 1:
+        #         return -1
+
+        #     if d[x] % 3 == 0:
+        #         o += d[x] // 3
+               
+        #     else:
+        #         o += d[x] // 3 + 1               
+            
+        # return o 
 
         # Solution 2 prototype 
 

@@ -8,6 +8,32 @@
 
 class Solution:
     def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:
+
+        # Solution 3 (passes 60/80 cases) Checking to see if max(left + right, height after infected) 
+       
+        def getH(r, s):
+
+            if not r:
+                return 0
+
+            if r.val == s:
+                return 1
+
+            left_height = getH(r.left, s)
+            right_height = getH(r.right, s)
+
+            return max(left_height, right_height) + 1
+
+        if root.val == start and not root.left and not root.right:
+            return 0  # Only node and the target node
+
+        left = getH(root.left, start)
+        right = getH(root.right, start)
+
+        if left + right +1 > max(left, right):
+            return left + right
+        else:
+            return max(left, right)
         
         # Solution 2 (fails some cases)
 

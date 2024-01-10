@@ -9,6 +9,12 @@
 class Solution:
     def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:
 
+        # To solve completely
+
+        # Base case 1 node (Done)
+        # Base case 2 height of left/right + height up to infected (done)
+        # Base case 3 height of tree left/right after infected, max(base case2, base case 3) (to do)
+
         # Solution 3 (passes 60/80 cases) Checking to see if max(left + right, height after infected) 
        
         def getH(r, s):

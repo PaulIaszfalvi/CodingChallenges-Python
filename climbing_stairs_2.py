@@ -1,7 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:       
 
-        # Fibonacci Sequence
+        # Fibonacci Sequence (33 ms)
 
         f, s = 0, 1
 
@@ -34,7 +34,7 @@ class Solution:
         # result_matrix = power(base_matrix, n - 1)
         # return result_matrix[0][0] + result_matrix[0][1]
     
-        # Same as above but recursive
+        # Same as above but recursive (26ms)
     
         if n <= 1:
             return 1
@@ -58,3 +58,13 @@ class Solution:
         result_matrix = power(base_matrix, n - 1)
         return sum(result_matrix[0])
 
+        # Using dynamic programming and memoization (29ms)
+    
+        memo = {0: 1, 1: 1}
+
+        def fib(m):
+            if m not in memo:
+                memo[m] = fib(m - 1) + fib(m - 2)
+            return memo[m]
+
+        return fib(n)

@@ -14,7 +14,12 @@ class Solution:
             if s[i] in vowels:
                 v += 1
 
-            max_vowels = max(max_vowels, v)
+            # max_vowels = max(max_vowels, v)
+            # Assigns the value to max_vowels as above, but also checks
+            # to see if we've reached the maximum vowels we can have
+            # break early if so
+            if (max_vowels := max(max_vowels, v)) == k:
+                    break
    
         return max_vowels
 

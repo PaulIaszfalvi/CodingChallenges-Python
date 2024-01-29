@@ -10,6 +10,15 @@ class MyQueue:
         temp = self.s1[0]
         self.s1 = self.s1[1:]
         return temp
+    
+    # To make pop O(1)
+    
+    # while self.s1:
+    #         self.s2.append(self.s1.pop())
+    #     self.s1.append(x)
+    #     while self.s2:
+    #         self.s1.append(self.s2.pop())
+
 
     def peek(self) -> int:
         return self.s1[0]

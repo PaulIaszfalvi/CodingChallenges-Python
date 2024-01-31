@@ -1,5 +1,30 @@
 class Solution:
     def dailyTemperatures(self, temperatures):
+
+        # Solution January 2024        
+        
+        ans = []        
+
+        for i, v in enumerate(t):
+
+            f = i + 1
+            count = 0
+
+            while f < len(t):                          
+
+                if t[f] > v:
+                    ans.append(f - i)
+                    break
+
+                f += 1
+            else: 
+                ans.append(0)
+       
+
+        return ans
+
+
+        # Solution September 2023 
         
         stack = []
         output = [0] * len(temperatures)

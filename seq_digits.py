@@ -4,6 +4,7 @@ class Solution:
 
         # Solution 2
         
+               
         ans = []
         num = 1
         c = num + 1
@@ -36,7 +37,7 @@ class Solution:
                     ans.append(num)
                 else:
                     break
-            print(num)
+           
         return ans
 
         # Solution 1 Brue force using pattern (on paper) O(n)
@@ -61,6 +62,6 @@ class Solution:
         # return seq[l: h+1]
 
 low = 100
-high = 3000
+high = 300000
 print(Solution().sequentialDigits(low, high))
 

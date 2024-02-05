@@ -9,3 +9,5 @@ class Solution:
             return result * result if exponent % 2 == 0 else result * result * base
 
         return helper(x, n)
+    
+print(Solution().myPow(5,333))

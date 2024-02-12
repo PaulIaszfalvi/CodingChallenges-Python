@@ -1,5 +1,38 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
+
+        # Solution 2
+
+        n = {}
+        m = a = 0
+
+        for x in nums:
+            n[x] = n.get(x, 0) + 1
+            val = n.get(x)
+            if val > m:
+                m = val
+                a = x
+
+        return a
+
+
+        # Solution 1 2/12/24
+
+        n = {}
+
+        for x in nums:
+            n[x] = n.get(x, 0) + 1
+
+        m, ans = 0, 0
+
+        for k, v in n.items():
+            if m < v:
+                m = v
+                ans = k
+
+        return ans
+
+        # Solution 1
         
         map = {}
         max_value = nums[0]

@@ -1,6 +1,23 @@
 class Solution:
     def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
 
+        # Solution 1 optimized
+
+        d = {}
+
+        for x in arr:
+            d[x] = d.get(x, 0) + 1
+
+        d = sorted(d.items(), key=lambda x: x[1])
+        unique = len(d)
+  
+        for x in d:            
+            if k >= x[1]:
+                k -= x[1]
+                unique -= 1
+                
+        return unique
+
         # Solution 3 
 
         d = {}

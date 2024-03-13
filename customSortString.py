@@ -2,7 +2,7 @@ class Solution:
     def customSortString(self, order: str, s: str) -> str:
 
         # Alternate 
-
+i
         # Count the occurrences of each character in s
         count = {}
         for char in s:

@@ -2,12 +2,7 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
 
         # Fastest online 
-
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+     
         return len(set(zip(s,t))) == len(set(s)) == len(set(t))
 
         # Solution 1

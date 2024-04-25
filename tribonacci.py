@@ -1,6 +1,21 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
 
+        # Solution 4/24/24 update
+
+        t0, t1, t2, ans = 0, 1, 1, 0
+  
+        if n == 0:
+            return 0
+        if n == 1 or n == 2:
+            return 1
+        
+        for _ in range(n - 2):
+            ans = t0 + t1 + t2
+            t0, t1, t2 = t1, t2, ans          
+
+        return ans
+
         # Solution 4/24/24
         def tribonacci(self, n: int) -> int:
         

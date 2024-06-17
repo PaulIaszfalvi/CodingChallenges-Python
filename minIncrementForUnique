@@ -1,0 +1,38 @@
+class Solution:
+    def minIncrementForUnique(self, nums: List[int]) -> int:
+
+        # Solution 2
+
+        nums.sort()
+        count = 0
+        prev = nums[0]
+
+        for x in nums[1:]:
+            if x <= prev:
+                count += prev - x + 1
+                prev = prev + 1
+            else:
+                prev = x
+
+        return count
+
+        # Solution 1
+        
+        nums.sort()
+        count = 0
+        prev = nums[0]
+
+        print(nums)
+
+        for x in nums[1:]:
+            if x == prev:
+                count += 1
+                prev = x + 1
+            elif x < prev:
+                calc = abs (x - prev) + 1
+                count += calc
+                prev = x + calc
+            else:
+                prev = x
+
+        return count

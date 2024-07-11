@@ -1,5 +1,24 @@
 class Solution:
     def reverseParentheses(self, s: str) -> str:
+
+        # Solution 2
+
+        stack = []
+        
+        for char in s:
+            if char == ')':
+                # Extract the substring inside the parentheses and reverse it
+                temp = []
+                while stack and stack[-1] != '(':
+                    temp.append(stack.pop())
+                stack.pop()  # Remove the opening parenthesis '('
+                stack.extend(temp)  # Push the reversed substring back onto the stack
+            else:
+                stack.append(char)
+        
+        return ''.join(stack)
+
+        # Solution 1
         
         stack = []
         

@@ -1,6 +1,37 @@
 class Solution:
     def countDays(self, days: int, meetings: List[List[int]]) -> int:
 
+        # Solution 4 (Optimized)
+
+        if not meetings:
+            return days  # If no meetings, all days are free
+        
+        # Sort meetings based on start day (only needed if input is unsorted)
+        meetings.sort()
+
+        merged = []
+        start, end = meetings[0]
+
+        for s, e in meetings[1:]:
+            if s <= end:  # Overlapping or touching meetings
+                end = max(end, e)  # Merge intervals
+            else:
+                merged.append([start, end])
+                start, end = s, e
+        
+        # Append the last merged interval
+        merged.append([start, end])
+
+        # Count free days
+        free_days = merged[0][0] - 1  # Days before the first meeting
+        free_days += days - merged[-1][1]  # Days after the last meeting
+
+        for i in range(1, len(merged)):
+            free_days += merged[i][0] - merged[i-1][1] - 1  # Days between meetings
+
+        return free_days
+
+
       # Solution 3
 
         if not meetings:
